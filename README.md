@@ -22,7 +22,7 @@ $ gem install invalid_authenticity_token_rescue
 ```
 
 ## Contributing
-Contribution directions go here.
+Bug reports and pull requests are welcome on GitHub at https://github.com/wwidea/invalid_authenticity_token_rescue.
 
 ## License
 The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
