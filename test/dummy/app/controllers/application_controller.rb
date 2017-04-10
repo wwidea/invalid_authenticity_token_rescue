@@ -1,4 +1,4 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
-  include InvalidAuthenticityTokenRescue::RescueFromInvalidAuthenticityToken
+  rescue_from_invalid_authenticity_token
 end

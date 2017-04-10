@@ -1,9 +1,13 @@
+require 'invalid_authenticity_token_rescue/railtie'
+
 module InvalidAuthenticityTokenRescue
   module RescueFromInvalidAuthenticityToken
     extend ActiveSupport::Concern
     
-    included do
-      rescue_from ActionController::InvalidAuthenticityToken, with: :invalid_authenticity_token
+    module ClassMethods
+      def rescue_from_invalid_authenticity_token
+        rescue_from ActionController::InvalidAuthenticityToken, with: :invalid_authenticity_token
+      end
     end
     
     protected
