@@ -1,6 +1,10 @@
 # InvalidAuthenticityTokenRescue
 Rails 5 default protect_from_forgery is to raise an exception. Some browsers trigger this exception by caching pages. This gem rescues the InvalidAuthenticityToken exception, triggers ExceptionNotifier, and redirects to the login page. For more details and steps to reprodcue the problem see this issue: https://github.com/rails/rails/issues/21948.
 
+With the default Rails 5 settings users receive an error page when an InvalidAuthenticityToken is raised. For actual malicious requests this would be fine. However, with the way some broswers cache pages legitimate users are getting these error pages and sometimes make repreated unsuccessful attempts to sumbmit a form.
+
+With this gem in place when an InvalidAuthenticityToken is raised it will be rescued. The error information is captured and notifications are sent to developers. The user will be redirected to new_session_path with flash warning set to *"Your session has expired, please log in again"*.
+
 ## ExceptionNotification Gem Required
 Install and congiure the [exception_notifcation](https://github.com/smartinez87/exception_notification) gem first to receive notifications when InvalidAuthenticityToken exceptions are raised.
 
