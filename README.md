@@ -1,5 +1,8 @@
 # InvalidAuthenticityTokenRescue
-Rails 5 default protect_from_forgery is to raise an exception. Some browsers trigger this exception by caching pages. This gem rescues the InvalidAuthenticityToken exception, triggers ExceptionNotifier, and redirects to the login page. For more details and steps to reprodcue the problem see this issue: https://github.com/rails/rails/issues/21948
+Rails 5 default protect_from_forgery is to raise an exception. Some browsers trigger this exception by caching pages. This gem rescues the InvalidAuthenticityToken exception, triggers ExceptionNotifier, and redirects to the login page. For more details and steps to reprodcue the problem see this issue: https://github.com/rails/rails/issues/21948.
+
+## ExceptionNotification Gem Required
+Install and congiure the [exception_notifcation](https://github.com/smartinez87/exception_notification) gem first to receive notifications when InvalidAuthenticityToken exceptions are raised.
 
 ## Installation
 Add this line to your application's Gemfile:
