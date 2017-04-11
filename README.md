@@ -38,6 +38,16 @@ Adding **skip_before_action** to public forms is optional but will improve user 
 
 Adding **skip_before_action** will allow the request to complete and the users session to be setup with the correct token. Subsequent forms submitted by the user will complete successfully. If **skip_before_action** is not added the user will be redirected to the login page and notifed that their session has expired and they need to login again.
 
+## Configuration
+The default **redirect_path** is *new_session_path*. This can be set to a different value with an initializer.
+
+```ruby
+# config/initializers/invalid_authenticity_token_rescue.rb
+InvalidAuthenticityTokenRescue.configure do |config|
+  config.redirect_path = 'sign_in_path'
+end
+```
+
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/wwidea/invalid_authenticity_token_rescue.
 
