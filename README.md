@@ -29,12 +29,12 @@ Add **skip_before_action** to public forms (optional):
 
 ```ruby
 class SessionsController < ApplicationController
-  skip_before_action :verify_authenticity_token, on: :create
+  skip_before_action :verify_authenticity_token, only: :create
   ...
 end
 ```
 
-Adding **skip_before_action** is optional but will improve user experience. Rails **protect_from_forgery** is intended to prevent a logged in user's credentials from being maliciously used to submit a form as that user. Publicly accessible forms, like a login page, that do not rely on a currently logged in user are not susceptible to forgery attacks.
+Adding **skip_before_action** to public forms is optional but will improve user experience. Rails **protect_from_forgery** is intended to prevent a logged in user's credentials from being maliciously used to submit a form as that user. Publicly accessible forms, like a login page, that do not rely on a currently logged in user are not susceptible to forgery attacks.
 
 Adding **skip_before_action** will allow the request to complete and the users session to be setup with the correct token. Subsequent forms submitted by the user will complete successfully. If **skip_before_action** is not added the user will be redirected to the login page and notifed that their session has expired and they need to login again.
 
