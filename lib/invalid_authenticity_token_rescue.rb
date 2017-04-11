@@ -1,3 +1,4 @@
+require 'invalid_authenticity_token_rescue/configuration'
 require 'invalid_authenticity_token_rescue/railtie'
 
 module InvalidAuthenticityTokenRescue
@@ -15,7 +16,7 @@ module InvalidAuthenticityTokenRescue
     def invalid_authenticity_token(exception)
       ExceptionNotifier.notify_exception(exception, env: request.env)
       flash[:warning] = 'Your session has expired, please log in again'
-      redirect_to new_session_path
+      redirect_to send(InvalidAuthenticityTokenRescue.configuration.redirect_path)
     end
   end
 end
