@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    invalid_authenticity_token_rescue (0.1.1)
+    invalid_authenticity_token_rescue (0.1.2)
       exception_notification (~> 4.2.1)
       rails (>= 5.0.0, < 5.2)
 
