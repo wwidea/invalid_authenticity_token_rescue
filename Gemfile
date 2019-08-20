@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.5.1'
+ruby '2.6.3'
 
 # Declare your gem's dependencies in invalid_authenticity_token_rescue.gemspec.
 # Bundler will treat runtime dependencies like base dependencies, and
